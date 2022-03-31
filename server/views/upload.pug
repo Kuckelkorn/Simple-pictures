@@ -1,0 +1,25 @@
+extends layouts/head.pug 
+
+block main
+  h2 Foto toevoegen
+
+  form(action="/uploaden")
+    label Kies foto bestand
+    input(type="file")
+    label Jouw naam
+    input(type="text")
+    label Fotograaf
+    input(type="text")
+    label Locatie
+    input(type="text")
+    label Korte beschrijving
+    input(type="text")
+    label Beschrijving
+    input(type="textarea")
+    label Album
+    select
+      option Serie 1
+      option Serie 2
+      option Serie 3
+      option Serie 4
+    button(type="submit") Foto uploaden
