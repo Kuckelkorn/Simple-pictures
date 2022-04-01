@@ -3,23 +3,23 @@ extends layouts/head.pug
 block main
   h2 Foto toevoegen
 
-  form(action="/uploaden")
+  form(action="/uploaden" method="POST" enctype="multipart/form-data")
     label Kies foto bestand
-    input(type="file")
+      input(name="picture" type="file")
     label Jouw naam
-    input(type="text")
+      input(name="uploader" type="text")
     label Fotograaf
-    input(type="text")
+      input(name="photographer" type="text")
     label Locatie
-    input(type="text")
+      input(name="location" type="text")
     label Korte beschrijving
-    input(type="text")
+      input(name="description_short" type="text")
     label Beschrijving
-    input(type="textarea")
+      input(name="description" type="textarea")
     label Album
-    select
-      option Serie 1
-      option Serie 2
-      option Serie 3
-      option Serie 4
+      select(name="album")
+        option Serie 1
+        option Serie 2
+        option Serie 3
+        option Serie 4
     button(type="submit") Foto uploaden
