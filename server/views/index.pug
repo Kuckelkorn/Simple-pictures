@@ -9,11 +9,12 @@ block main
   main
     if album != undefined
       h2=album
-    each picture, i in pictures
-      div.card
-        a(href="/foto/"+picture.id)
-          img(src=picture.path alt=picture.description)
-          p= picture.description
-    a(href="/uploaden") Uploaden
+    section.pictures
+      each picture, i in pictures
+        div(class="card "+picture.album)
+          a(href="/foto/"+picture.id)
+            img(src=picture.path alt=picture.description)
+            p= picture.description
+  a.uploaden(href="/uploaden") Uploaden
 
 
