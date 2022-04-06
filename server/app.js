@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import multer from 'multer'
 import fs from 'fs'
+import { v4 as uuidv4 } from 'uuid';
 import 'dotenv/config'
 
 let port = process.env.PORT || 5555
@@ -16,11 +17,7 @@ const storage = multer.diskStorage({
   }
 })
 
-
-
 const upload = multer({ storage: storage })
-
-
 
 //Initialise app
 app
@@ -32,20 +29,28 @@ app
 
 // Routes
 app
-  .get('/', (req, res) => {
-    res.render('index')
+  .get('/', async (req, res) => {
+    const pictures = await readFile(picturePath)
+    const albums = await getAlbums()
+    res.render(('index'), {albums, pictures})
   })
-  .get('/foto/:id', (req, res) => {
+  .get('/foto/:id', async (req, res) => {
+    const pictures= await readFile(picturePath)
     const id = req.params.id
-    res.render('picture')
+    const picture = pictures.filter((obj) => {
+      return obj["id"] === id
+    })[0]
+    res.render('picture', {picture})
   })
   .get('/uploaden', (req, res) => {
     res.render('upload')
   })
   .post('/uploaden', upload.single('picture'), (req, res) => {
+
+    const path = `${req.file.path}`.replace('public', '')
     const photograph = {
-      id: 3,
-      path: `/${req.file.path}`,
+      id: uuidv4(),
+      path: `${path}`,
       description: req.body.description_short,
       descriptionLong: req.body.description,
       location: req.body.location,
@@ -53,13 +58,17 @@ app
       uploader: req.body.uploader,
       album: req.body.album
     }
-    const photographJSON = JSON.stringify(photograph)
-    readWrite(photographJSON, picturePath)
+    writeFile(photograph, picturePath)
     res.redirect('/')
   })
-  .get('/albums/:album', (req, res) => {
+  .get('/albums/:album', async (req, res) => {
     const album = req.params.album
-    res.render('index', {album})
+    const albums = await getAlbums()
+    let pictures= await readFile(picturePath)
+    pictures = pictures.filter((obj) => {
+      return obj["album"] === album
+    })
+    res.render('index', {album, pictures, albums})
   })
   .get('/albums/:album/uploaden', (req, res) => {
     res.render('upload')
@@ -72,22 +81,27 @@ app.listen(port, () => {
 });
 
 
-const readWrite = (obj, path) => {
-  const oldData = fs.readFile(path, (err, data) => {
+const readFile = async (path) => {
+  let data = fs.readFileSync(path, 'utf8', (err, data) => {
     if (err){
       console.log(err)
     } else {
-      return JSON.parse(data)
-    } 
+      return data
+    }
   })
-  console.log(oldData)
-  // const data =  JSON.parse(oldData)
-  // console.log(data)
+  data = JSON.parse(data)
+  return data
+}
 
-  // const newData = oldData.push(obj)
-  // fs.writeFile(path, newData, (err) => {
-  //   if (err){
-  //     console.log(err)
-  //   }
-  // })
+const writeFile = async (obj, path) => {
+  let data = await readFile(path)
+  data.push(obj)
+  const newData = JSON.stringify(data)
+  fs.writeFileSync(path, newData)
+}
+
+const getAlbums = async () => {
+  const pictures = await readFile(picturePath)
+  const unique = [...new Set(pictures.map(item => item.album))]
+  return unique
 }

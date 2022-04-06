@@ -1,10 +1,10 @@
 extends layouts/head.pug 
 
 block main
-  h2 Korte beschrijving
-  p Hier komt de image tag
-  p.fotograaf Naam fotograaf
-  p.uploader Geupload door: naam uploader 
-  p.beschrijving Uitgebreide beschrijving
-  p.album Album
-  p.locatie Amsterdam
+  h2= picture.description
+  img(src=picture.path alt=picture.description)
+  p.fotograaf= picture.photographer
+  p.uploader= picture.uploader
+  p.beschrijving= picture.descriptionLong
+  p.album= picture.album
+  p.locatie= picture.location

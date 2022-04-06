@@ -5,21 +5,21 @@ block main
 
   form(action="/uploaden" method="POST" enctype="multipart/form-data")
     label Kies foto bestand
-      input(name="picture" type="file")
+      input(name="picture" type="file" required)
     label Jouw naam
-      input(name="uploader" type="text")
+      input(name="uploader" type="text" required)
     label Fotograaf
       input(name="photographer" type="text")
     label Locatie
       input(name="location" type="text")
     label Korte beschrijving
-      input(name="description_short" type="text")
+      input(name="description_short" type="text" required)
     label Beschrijving
       input(name="description" type="textarea")
     label Album
       select(name="album")
-        option Serie 1
-        option Serie 2
-        option Serie 3
-        option Serie 4
+        option Eten
+        option Dieren
+        option Abstract
+        option Landschappen
     button(type="submit") Foto uploaden
