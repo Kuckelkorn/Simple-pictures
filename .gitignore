@@ -1,4 +1,5 @@
 .DS_Store
+.markdownlint.json
 /node_modules/
 .env
 /public/pictures/*
