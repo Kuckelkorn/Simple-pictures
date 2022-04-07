@@ -20,7 +20,9 @@ h2{
 
 form{
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  flex-direction: -webkit-column;
   width: 65%;
   margin: auto;
 }
@@ -29,7 +31,9 @@ form label{
   margin-top: 1em;
   margin-right: 1em;
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  flex-direction: -webkit-column;
 }
 
 form input {
@@ -50,39 +54,46 @@ form button {
 nav{
   margin-bottom: 1em;
 }
-main > img {
-  display: block;
+
+.image{
   width: 90%;
-  height: auto;
   margin: 25px auto;
-  text-align: center;
+}
+
+.information{
+  margin: 25px auto;
+}
+
+.image > img {
+  width: 100%;
+  height: auto;
   border-radius: 25px;
 }
 
 nav li {
-  width: 100%;
+  width: 80%;
   height: auto;
   background-color: lightcoral;
   padding: 1em;
   list-style-type: none;
   text-align: center;
-  margin: 1em;
+  margin: 10px auto;
 }
 
 nav ul {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
-  align-items: center;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .card{
-  width: 30%;
+  width: 90%;
   height: auto;
-  padding: 2.5%;
   border-style: solid;
   border-radius: 1rem ;
-  margin: 2.5%;
+  margin: 10px auto;
+  overflow: hidden;
 }
 
 a {
@@ -102,20 +113,25 @@ a {
 
 .pictures{
   display: flex;
-  flex-direction: row;
+  display: -webkit-flex;
+  flex-direction: -webkit-row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .uploaden{
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: aquamarine;
-  box-shadow: 1px 1px 5px black;
+  -webkit-box-shadow: 1px 1px 5px grey;
+  box-shadow: 1px 1px 5px grey;
   font-weight: 900;
   position: fixed;
   bottom: 25px;
@@ -135,6 +151,7 @@ a {
 
 .beschrijving {
   font-weight: 400;
+  margin-bottom: 25px;
 }
 
 .album, .locatie{
@@ -144,5 +161,32 @@ a {
 .namen, .extra{
   display: flex;
   justify-content: space-between;
+  margin-right: 16px;
   margin-bottom: 16px;
+}
+
+@media(min-width: 40em){
+  nav ul {
+    flex-wrap: nowrap;
+  }
+
+  .card{
+    width: 35%;
+  }
+}
+
+@media(min-width: 50em){
+  
+  .image{
+    width: 45%
+  }
+
+  .information{
+    width: 45%;
+  }
+
+  .picture {
+    display: flex;
+    justify-content: space-around;
+  }
 }

@@ -6,7 +6,7 @@ block main
       each album, i in albums
         li 
           a(href="/albums/" + album)= album
-  main
+  main.index
     if album != undefined
       h2=album
     section.pictures

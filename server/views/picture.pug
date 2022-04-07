@@ -2,13 +2,14 @@ extends layouts/head.pug
 
 block main
   h2= picture.description
-  main
-    img(src=picture.path alt=picture.description)
-  section.information
-    div.namen
-      p.fotograaf Fotograaf: #{picture.photographer}
-      p.uploader  Geupload door: #{picture.uploader}
-    div.extra
-      p.album  Album: #{picture.album}
-      p.locatie Locatie: #{picture.location}
-    p.beschrijving  Beschrijving: #{picture.descriptionLong}
+  main.picture
+    section.image
+      img(src=picture.path alt=picture.description)
+    section.information
+      div.namen
+        p.fotograaf Fotograaf: #{picture.photographer}
+        p.uploader  Geupload door: #{picture.uploader}
+      div.extra
+        p.album  Album: #{picture.album}
+        p.locatie Locatie: #{picture.location}
+      p.beschrijving  Beschrijving: #{picture.descriptionLong}
