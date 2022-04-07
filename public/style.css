@@ -77,13 +77,14 @@ nav li {
   padding: 1em;
   list-style-type: none;
   text-align: center;
-  margin: 10px auto;
+  margin: 1em auto;
 }
 
 nav ul {
   display: flex;
   display: -webkit-flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -169,6 +170,9 @@ a {
   nav ul {
     flex-wrap: nowrap;
   }
+  nav ul li {
+    width: auto;
+  }
 
   .card{
     width: 35%;
@@ -188,5 +192,12 @@ a {
   .picture {
     display: flex;
     justify-content: space-around;
+  }
+}
+
+@media(min-width: 80em){
+  body{
+    max-width: 80em;
+    margin: 0 auto;
   }
 }
