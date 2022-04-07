@@ -34,22 +34,33 @@ form label{
 
 form input {
   margin-top: 1em;
+  height: 24px;
 }
 
 form select {
   margin-top: 1em;
+  height: 24px;
 }
 
 form button {
   margin-top: 1em;
-  height: 50px;
+  margin-bottom: 32px;
+  height: 32px;
 }
 nav{
   margin-bottom: 1em;
 }
+main > img {
+  display: block;
+  width: 90%;
+  height: auto;
+  margin: 25px auto;
+  text-align: center;
+  border-radius: 25px;
+}
 
 nav li {
-  width: 10%;
+  width: 100%;
   height: auto;
   background-color: lightcoral;
   padding: 1em;
@@ -62,6 +73,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* flex-wrap: wrap; */
 }
 
 .card{
@@ -108,4 +120,29 @@ a {
   position: fixed;
   bottom: 25px;
   right: 25px;
+}
+
+.information{
+  display: block;
+  margin-inline:auto;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.fotograaf, .uploader{
+  font-weight: 300;
+}
+
+.beschrijving {
+  font-weight: 400;
+}
+
+.album, .locatie{
+  font-weight: 100;
+}
+
+.namen, .extra{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
