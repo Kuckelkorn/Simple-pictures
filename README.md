@@ -8,11 +8,9 @@ I made this application for the course browser technologies which is part of the
 
 #### Mobile
 
-<img src="./docs/assets/2.png" alt="Homescreen" width=50% height=50%>
-
-![Homescreen](./docs/assets/2.png)
-![Album screen](./docs/assets/1.png)
-![Upload](./docs/assets/3.png)
+<img src="./docs/assets/2.png" alt="Homescreen" width=33% height=33%>
+<img src="./docs/assets/1.png" alt="Album screen" width=33% height=33%>
+<img src="./docs/assets/3.png" alt="Upload" width=33% height=33%>
 
 ## Installation
 
