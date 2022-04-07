@@ -6,6 +6,12 @@ I made this application for the course browser technologies which is part of the
 
 ### Screenshots
 
+#### Mobile
+
+![Homescreen](./docs/assets/2.png)
+![Album screen](./docs/assets/1.png)
+![Upload](./docs/assets/3.png)
+
 ## Installation
 
 To get this application working you can clone this repository.
