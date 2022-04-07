@@ -8,15 +8,15 @@ I made this application for the course browser technologies which is part of the
 
 #### Mobile browser
 
-<img src="./docs/assets/2.png" alt="Homescreen" width=30% height=33%>
-<img src="./docs/assets/1.png" alt="Album screen" width=30% height=33%>
-<img src="./docs/assets/3.png" alt="Upload" width=30% height=33%>
+<img src="./docs/assets/2.png" alt="Homescreen" width=33% height=33%>
+<img src="./docs/assets/1.png" alt="Album screen" width=33% height=33%>
+<img src="./docs/assets/3.png" alt="Upload" width=33% height=33%>
 
 #### Desktop browser
 
-<img src="./docs/assets/d1.png" alt="Homescreen" width=30% height=33%>
-<img src="./docs/assets/d2.png" alt="Album screen" width=30% height=33%>
-<img src="./docs/assets/d3.png" alt="Upload" width=30% height=33%>
+<img src="./docs/assets/d1.png" alt="Homescreen" width=50% height=50%>
+<img src="./docs/assets/d2.png" alt="Album screen" width=50% height=50%>
+<img src="./docs/assets/d3.png" alt="Upload" width=50% height=50%>
 
 ## Installation
 
