@@ -1,5 +1,8 @@
 extends layouts/head.pug 
 
+block script
+  script(src="/scripts/script.js" defer)
+
 block main
   nav
     ul
@@ -7,8 +10,8 @@ block main
         li 
           a(href="/albums/" + album)= album
   main.index
-    button Normaal
-    button Carousel
+    aside
+      button(disabled) Weergave
     if album != undefined
       h2=album
     section.normal
@@ -17,7 +20,7 @@ block main
           a(href="/foto/"+picture.id)
             img(src=picture.path alt=picture.description)
             p= picture.description
-    section.carousel
+    section.carousel.hide
       each picture, i in pictures
         a(href="#"+picture.id)=i+1
       .slides

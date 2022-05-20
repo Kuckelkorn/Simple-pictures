@@ -73,7 +73,7 @@ nav{
 nav li {
   width: 80%;
   height: auto;
-  background-color: lightcoral;
+  background-color: rebeccapurple;
   padding: 1em;
   list-style-type: none;
   text-align: center;
@@ -101,6 +101,10 @@ a {
   text-decoration: none;
   color: black;
   font-weight: 300;
+}
+
+nav ul li a {
+  color: white;
 }
 
 .card p {
@@ -170,11 +174,31 @@ a {
   display: none;
 }
 
+.hide{
+  display: none;
+}
+
+button {
+  display: none;
+}
+
+button:disabled{
+  display: none;
+}
+
 @supports (scroll-snap-type: x mandatory) {
+  button {
+    display: block;
+  }
+
   .carousel {
     display: block;
     width: 65vw;
     margin: 2.5rem auto;
+  }
+
+  .hide{
+    display: none;
   }
   
   .carousel > a {
@@ -183,7 +207,6 @@ a {
     width: 1.5rem;
     height: 1.5rem;
     background: aquamarine;
-    text-decoration: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
