@@ -112,7 +112,7 @@ a {
   width: 100%;
 }
 
-.pictures{
+.normal{
   display: flex;
   display: -webkit-flex;
   flex-direction: -webkit-row;
@@ -166,7 +166,69 @@ a {
   margin-bottom: 16px;
 }
 
-@media(min-width: 40em){
+.carousel{
+  display: none;
+}
+
+@supports (scroll-snap-type: x mandatory) {
+  .carousel {
+    display: block;
+    width: 65vw;
+    margin: 2.5rem auto;
+  }
+  
+  .carousel > a {
+    display: inline-flex;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: aquamarine;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0.5rem 0.5rem 0;
+    position: relative;
+  }
+  
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .slides > .card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 65vw;
+    height: 50vh;
+    margin-right: 50px;
+    border-radius: 10px;
+    transform-origin: center center;
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slides:last-child {
+    margin-right: 0;
+  }
+  
+  .slides > .card img{
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width:45em) {
   nav ul {
     flex-wrap: nowrap;
   }

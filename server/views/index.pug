@@ -7,14 +7,26 @@ block main
         li 
           a(href="/albums/" + album)= album
   main.index
+    button Normaal
+    button Carousel
     if album != undefined
       h2=album
-    section.pictures
+    section.normal
       each picture, i in pictures
         div(class="card "+picture.album)
           a(href="/foto/"+picture.id)
             img(src=picture.path alt=picture.description)
             p= picture.description
+    section.carousel
+      each picture, i in pictures
+        a(href="#"+picture.id)=i+1
+      .slides
+        each picture, i in pictures
+          div(class="card "+picture.album id=picture.id)
+            a(href="/foto/"+picture.id)
+              img(src=picture.path alt=picture.description) 
+        
+
   a.uploaden(href="/uploaden") Uploaden
 
 
