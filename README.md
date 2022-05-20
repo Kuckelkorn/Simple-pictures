@@ -4,6 +4,13 @@
 
 I made this application for the course browser technologies which is part of the minor Webdesign and development. The goal of the course is to make an application that can be used on all possible devices. For this application the site was tested on an iPod touch, my own iPhone (XS) and a firefox browser and chromium based browser. The application focuses on viewing photo albums and uploading pictures.
 
+### Tested browsers
+
+- iPod Touch
+- Iphone 13
+- Firefox browser on mac
+- Chromium based browser on mac
+
 ### Screenshots
 
 #### Mobile browser
